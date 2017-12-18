@@ -1,0 +1,8 @@
+.table-striped thead tr {
+  background: #232;
+  color: #FFF;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background: gainsboro;
+  color: black;
+}

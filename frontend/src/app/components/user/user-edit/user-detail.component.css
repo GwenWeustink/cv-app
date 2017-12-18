@@ -1,0 +1,9 @@
+.card {
+  max-width: inherit;
+  margin: inherit;
+}
+
+.profile-heading {
+  background: #232;
+  color: #FFF;
+}

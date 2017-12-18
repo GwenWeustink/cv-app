@@ -1,0 +1,10 @@
+<!--hier zouden details van user komen zoals naam, alle cv's, etc-->
+<div class="card" *ngIf="selectedUser">
+  <div class="card-block profile-heading">
+    <h4>{{selectedUser.userName}}{{selectedUser.userCode}}</h4>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{selectedUser.userCode}}</li>
+    <li class="list-group-item">{{selectedUser.userName}}</li>
+  </ul>
+</div>
