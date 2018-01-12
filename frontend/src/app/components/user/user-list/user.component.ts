@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
   selectedUser: User;
 
   constructor(private userService: UserService) { }
-
+  // mock data
   // constructor(private apiservice: RestApiService) { }
   // ngOnInit() {
   // this.users = this.apiservice.getListOfUsers();
@@ -37,6 +37,7 @@ export class UserComponent implements OnInit {
     // this.userService.addUser() ...
    // this.selectedUser = new User();
     console.log('Add user');
+
   }
 
   editUser(selectedUser: User) {
@@ -44,6 +45,7 @@ export class UserComponent implements OnInit {
     // redirecten /routing naar user-detail.html
     console.log('Edit user');
   }
+
   deleteUser(user: User) {
     if (window.confirm('Gebruiker \'' + user.userName + '\' wordt verwijderd. Weet u het zeker?')) {
       this.userService.deleteUser(user.userId)
@@ -62,6 +64,7 @@ export class UserComponent implements OnInit {
      }
 
   }
+
   showUser(selectedUser: User) {
     this.selectedUser = selectedUser;
     // redirecten /routing naar user-detail.html

@@ -7,16 +7,18 @@ import { User } from '../../../common/users/User';
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
   styleUrls: ['./user-detail.component.css']
+
 })
-export class UserDetailComponent implements OnInit {
-//  @Input()
+export class UserDetailComponent  {
+  @Input()
   selectedUser: User;
 
-  constructor() {
-    this.selectedUser = new User (4, 'test', 'test');
-  }
+  // constructor() {
+   // this.selectedUser = new User (4, 'test', 'test');
+  // }
 
-  ngOnInit() {
+  saveUser() {
+    this.selectedUser = null;
   }
 
 }

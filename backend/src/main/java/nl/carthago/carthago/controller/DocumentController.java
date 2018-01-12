@@ -3,9 +3,7 @@ package nl.carthago.carthago.controller;
 import nl.carthago.carthago.domain.Document;
 import nl.carthago.carthago.service.DocumentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/document")
@@ -23,8 +21,28 @@ public class DocumentController {
         return documentService.list();
     }
 
-    @RequestMapping("/{docId}")
-    public Document list(@PathVariable(value = "docId") int docId) {
-        return documentService.list(docId);
+    // Read (one)
+    @RequestMapping(value = "/{docId}", method = RequestMethod.GET)
+    public Document list(@PathVariable(value = "docId") int documentId) {
+        return documentService.list(doctId);
     }
+
+    // Update
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
+    public Document update(@PathVariable(value = "docId") int documentId, @RequestBody document document) {
+        return documentService.update(docId, document);
+    }
+
+    // Delete
+    @RequestMapping(value = "/{docId}", method = RequestMethod.DELETE)
+    public void delete(@PathVariable(value = "docId") int documentId) {
+        if (this.list(documentId) != null) {
+            documentService.delete(docId);
+
+        }
+    }
+    // hier search functie inbouwen
+
 }
+
+

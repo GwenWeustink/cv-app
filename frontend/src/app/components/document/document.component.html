@@ -1,20 +1,32 @@
-<table class="table table-striped table-hover">
-  <thead>
-   <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Version</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let document of documents" (click)="showDocument(user)">
-    <td>{{ document.docId }}</td>
-    <td>{{ document.docName }}</td>
-    <td>{{ document.docVersionNr }}</td>
-    <td><button class="showDetails" (click) ="editDocument(document)">Edit</button></td>
-    <td><button class="delete" (click) ="deleteDocument(document)">Delete</button></td>
-  </tr>
-  </tbody>
-</table>
-<button (click)="addDocument()">Add document</button>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+  <table class="table table-striped table-hover">
+    <thead>
+     <tr>
+       <th>Id</th>
+       <th>Name</th>
+       <th>Version</th>
+       <th></th>
+       <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let document of documents" (click)="showDocument(user)">
+      <td>{{ document.docId }}</td>
+      <td>
+      <!--Download -->
+      <a href="downloadDocument()" id="confirm" onclick="return confirm('Wilt u dit document downloaden?');">{{ document.docName }}</a>
+      </td>
+      <td>{{ document.docVersionNr }}</td>
+      <td><a><i class="fa fa-edit" (click) ="editDocument(document)"></i></a></td>
+      <td><a><i class="fa fa-trash" (click) ="deleteDocument(document)"></i></a></td>
+    </tr>
+    </tbody>
+  </table>
+  <button (click)="addDocument()">Add document</button>
+  </body>
+</html>

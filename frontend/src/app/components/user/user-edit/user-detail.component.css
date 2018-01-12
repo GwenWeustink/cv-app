@@ -1,9 +1,7 @@
-.card {
+.form-group {
   max-width: inherit;
   margin: inherit;
+  color: black;
+  font-style: oblique;
 }
 
-.profile-heading {
-  background: #232;
-  color: #FFF;
-}

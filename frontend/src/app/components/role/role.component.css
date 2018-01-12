@@ -6,3 +6,7 @@
   background: gainsboro;
   color: black;
 }
+.table {
+  font-size: 1em;
+  line-height: inherit;
+}

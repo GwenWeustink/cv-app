@@ -1,10 +1,22 @@
 <!--hier zouden details van user komen zoals naam, alle cv's, etc-->
-<div class="card" *ngIf="selectedUser">
-  <div class="card-block profile-heading">
-    <h4>{{selectedUser.userName}}{{selectedUser.userCode}}</h4>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{selectedUser.userCode}}</li>
-    <li class="list-group-item">{{selectedUser.userName}}</li>
-  </ul>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <form name="editUserName" *ngIf="selectedUser">
+      <h4>Edit {{selectedUser.userName}}</h4>
+      <div class="form-group">
+        <label for="userCode">Code</label>
+        <input type="text" class="form-control" [(ngModel)]="selectedUser.userCode"  name="userCode" id="userCode" placeholder="Enter user code"/>
+      </div>
+      <div class="form-group">
+        <label for="userName">Name</label>
+        <input type="text" class="form-control" [(ngModel)]="selectedUser.userName"  name="userName" id="userName" placeholder="Enter user name"/>
+      </div>
+      <!--div>user.email</div-->
+      <button type="button" class="btn btn-primary" (click)="saveUser()">Submit</button>
+    </form>
+  </body>
+</html>

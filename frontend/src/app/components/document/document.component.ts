@@ -36,5 +36,8 @@ export class DocumentComponent implements OnInit {
       this.documentService.deleteDocument(document.docId);
     }
   }
+  downloadDocument() {
+    console.log('Download document');
+  }
 }
 

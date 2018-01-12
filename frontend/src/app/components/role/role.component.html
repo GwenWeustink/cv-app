@@ -1,17 +1,27 @@
-<table class="table table-striped table-hover">
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>Name</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let role of roles" (click)="showRole(user)">
-    <td>{{ role.roleId }}</td>
-    <td>{{ role.roleName }}</td>
-    <td><button (click)="editRole(role)">Edit</button></td>
-    <td><button (click)="deleteRole(role)">Delete</button></td>
-  </tr>
-  </tbody>
-</table>
-<button (click)="addRole()">Add role</button>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let role of roles" (click)="showRole(role)">
+        <td>{{ role.roleId }}</td>
+        <td>{{ role.roleName }}</td>
+        <td><a><i class="fa fa-edit" (click) ="editRole(role)"></i></a></td>
+        <td><a><i class="fa fa-trash" (click) ="deleteRole(role)"></i></a></td>
+       </tr>
+      </tbody>
+    </table>
+    <button (click)="addRole()">Add role</button>
+  </body>
+</html>

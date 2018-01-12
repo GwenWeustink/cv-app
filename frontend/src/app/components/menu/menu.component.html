@@ -1,7 +1,38 @@
-<h2>Carthago CV app - Frontend</h2>
-<ul>
-  <li><a routerLink="/document">Documents</a></li>
-  <li><a routerLink="/user">Users</a></li>
-  <li><a routerLink="/role">Roles</a></li>
-  <!--li><a routerLink="">Menu</a></--li-->
-</ul>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-faded">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Links -->
+      <div class="collapse navbar-collapse" id="nav-content">
+        <ul class="navbar-nav mr-auto nav-tabs">
+          <li class="nav-item" [class.active]="isActive('/')">
+            <a class="nav-link" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item" [class.active]="isActive('/document')">
+            <a class="nav-link" routerLink="/document">Documents</a>
+          </li>
+          <li class="nav-item" [class.active]="isActive('/user')">
+            <a class="nav-link" routerLink='/user'>Users</a>
+          </li>
+          <li class="nav-item" [class.active]="isActive('/role')">
+            <a class="nav-link" routerLink="/role">Roles</a>
+          </li>
+        </ul>
+        </div>
+        <!--p>{{myType}}</p> <input (keyup)='userInput($event)'-->
+        <!-- Search -->
+        <form class="form-inline" role="search">
+          <input type="text" class="form-control">
+          <!--i class="fa fa-search" aria-hidden="true"></i-->
+          <button type="submit" class="btn btn-secondary">Search</button>
+        </form>
+    </nav>
+  </body>
+</html>
+
